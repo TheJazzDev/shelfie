@@ -1,6 +1,7 @@
 import { View } from 'react-native';
 import useTheme from '../hooks/useTheme';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { ReactNode } from 'react';
 
 const ThemedView = ({
   style,
@@ -9,8 +10,8 @@ const ThemedView = ({
   ...props
 }: {
   style: any;
-  children: any;
   safe?: boolean;
+  children: ReactNode;
 }) => {
   const theme = useTheme();
   const insets = useSafeAreaInsets();
