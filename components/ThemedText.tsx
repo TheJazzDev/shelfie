@@ -2,7 +2,7 @@ import { Text } from 'react-native';
 import useTheme from '../hooks/useTheme';
 import { ReactNode } from 'react';
 
-const ThemedText = ({
+const ThemedTexted = ({
   style,
   title = false,
   children,
@@ -23,4 +23,4 @@ const ThemedText = ({
   );
 };
 
-export default ThemedText;
+export default ThemedTexted;

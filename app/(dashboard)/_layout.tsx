@@ -16,8 +16,8 @@ export default function DashboardLayout() {
             paddingTop: 10,
             height: 90,
           },
-          tabBarActiveTintColor: theme.iconColorFocused,
-          tabBarInactiveTintColor: theme.iconColor,
+          tabBarActiveTintColor: theme.activeTint,
+          tabBarInactiveTintColor: theme.inactiveTint,
         }}>
         <Tabs.Screen
           name='profile'
@@ -27,7 +27,7 @@ export default function DashboardLayout() {
               <Ionicons
                 size={24}
                 name={focused ? 'person' : 'person-outline'}
-                color={focused ? theme.iconColorFocused : theme.iconColor}
+                color={focused ? theme.activeTint : theme.inactiveTint}
               />
             ),
           }}
@@ -40,7 +40,7 @@ export default function DashboardLayout() {
               <Ionicons
                 size={24}
                 name={focused ? 'book' : 'book-outline'}
-                color={focused ? theme.iconColorFocused : theme.iconColor}
+                color={focused ? theme.activeTint : theme.inactiveTint}
               />
             ),
           }}
@@ -53,7 +53,7 @@ export default function DashboardLayout() {
               <Ionicons
                 size={24}
                 name={focused ? 'create' : 'create-outline'}
-                color={focused ? theme.iconColorFocused : theme.iconColor}
+                color={focused ? theme.activeTint : theme.inactiveTint}
               />
             ),
           }}

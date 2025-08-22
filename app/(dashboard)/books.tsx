@@ -1,6 +1,6 @@
 import { FlatList, Pressable, StyleSheet } from 'react-native';
 
-import { Spacer, ThemedCard, ThemedText, ThemedView } from '../../components';
+import { Spacer, ThemedCard, ThemedTexted, ThemedView } from '../../components';
 import { useBooks } from '../../context/BooksContext';
 import { Colors } from '../../constants';
 import { useRouter } from 'expo-router';
@@ -12,9 +12,9 @@ const Books = () => {
   return (
     <ThemedView safe={true} style={styles.container}>
       <Spacer />
-      <ThemedText title={true} style={styles.heading}>
+      <ThemedTexted title={true} style={styles.heading}>
         Your Reading List
-      </ThemedText>
+      </ThemedTexted>
 
       <Spacer />
       <FlatList
@@ -25,8 +25,8 @@ const Books = () => {
           <Pressable onPress={() => router.push(`/books/${item.$id}`)}>
             <ThemedCard style={styles.card}>
               <>
-                <ThemedText style={styles.title}>{item.title}</ThemedText>
-                <ThemedText>Written by {item.author}</ThemedText>
+                <ThemedTexted style={styles.title}>{item.title}</ThemedTexted>
+                <ThemedTexted>Written by {item.author}</ThemedTexted>
               </>
             </ThemedCard>
           </Pressable>

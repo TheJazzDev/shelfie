@@ -16,7 +16,7 @@ declare global {
     books: Book[];
     fetchBooks: () => Promise<void>;
     fetchBookById: (id: string) => Promise<Book>;
-    createBook: (data: Omit<Book, keyof Models.Document>) => Promise<void>;
+    createBook: (data: Omit<Book, keyof Models.Document>) => Promise<boolean>;
     deleteBook: (id: string) => Promise<void>;
   }
 }

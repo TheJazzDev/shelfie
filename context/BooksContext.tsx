@@ -48,8 +48,8 @@ export function BooksProvider({ children }: BooksProviderProps) {
 
   async function createBook(
     data: Omit<Book, keyof Models.Document>
-  ): Promise<void> {
-    if (!user) return;
+  ): Promise<boolean> {
+    if (!user) return false;
 
     try {
       await databases.createDocument(
@@ -63,8 +63,11 @@ export function BooksProvider({ children }: BooksProviderProps) {
           Permission.delete(Role.user(user.$id)),
         ]
       );
+
+      return true;
     } catch (error: any) {
       setError(error.message);
+      return false;
     }
   }
 

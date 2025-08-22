@@ -8,13 +8,14 @@ import {
 import {
   Spacer,
   ThemedButton,
-  ThemedText,
+  ThemedTexted,
   ThemedTextInput,
   ThemedView,
 } from '../../components';
 import { useState } from 'react';
 import { useRouter } from 'expo-router';
 import { useBooks } from '../../context/BooksContext';
+import { Colors } from '../../constants';
 
 const Create = () => {
   const [title, setTitle] = useState<string>('');
@@ -23,34 +24,32 @@ const Create = () => {
   const [description, setDescription] = useState<string>('');
 
   const router = useRouter();
-  const { createBook } = useBooks();
+  const { error, createBook } = useBooks();
 
   async function handleSubmit() {
     if (!title.trim() || !author.trim() || !description.trim()) return;
 
     setLoading(true);
 
-    // create the book
-    await createBook({ title, author, description });
+    const res = await createBook({ title, author, description });
 
-    // reset fields
-    setTitle('');
-    setAuthor('');
-    setDescription('');
+    if (res) {
+      setTitle('');
+      setAuthor('');
+      setDescription('');
 
-    // redirect
-    router.replace('/books');
+      router.replace('/books');
+    }
 
-    // reset loading state
     setLoading(false);
   }
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ThemedView safe={true} style={styles.container}>
-        <ThemedText title={true} style={styles.heading}>
+        <ThemedTexted title={true} style={styles.heading}>
           Add a New Book
-        </ThemedText>
+        </ThemedTexted>
         <Spacer />
 
         <ThemedTextInput
@@ -83,6 +82,10 @@ const Create = () => {
             {loading ? 'Saving...' : 'Create Book'}
           </Text>
         </ThemedButton>
+
+        <Spacer />
+        {error && <Text style={styles.error}>{error}</Text>}
+        <Spacer height={100} />
       </ThemedView>
     </TouchableWithoutFeedback>
   );
@@ -113,5 +116,14 @@ const styles = StyleSheet.create({
     minHeight: 100,
     alignSelf: 'stretch',
     marginHorizontal: 40,
+  },
+  error: {
+    color: Colors.warning,
+    padding: 10,
+    backgroundColor: '#f5c1c8',
+    borderColor: Colors.warning,
+    borderWidth: 1,
+    borderRadius: 6,
+    margin: 10,
   },
 });

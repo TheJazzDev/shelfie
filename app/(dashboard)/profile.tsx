@@ -1,6 +1,11 @@
 import { StyleSheet, Text } from 'react-native';
 
-import { Spacer, ThemedButton, ThemedText, ThemedView } from '../../components';
+import {
+  Spacer,
+  ThemedButton,
+  ThemedTexted,
+  ThemedView,
+} from '../../components';
 import { useUser } from '../../context/UserContext';
 
 const Profile = () => {
@@ -8,12 +13,12 @@ const Profile = () => {
 
   return (
     <ThemedView safe={true} style={styles.container}>
-      <ThemedText title={true} style={styles.heading}>
+      <ThemedTexted title={true} style={styles.heading}>
         {user?.email}
-      </ThemedText>
+      </ThemedTexted>
       <Spacer />
 
-      <ThemedText>Time to start reading some books...</ThemedText>
+      <ThemedTexted>Time to start reading some books...</ThemedTexted>
       <Spacer />
 
       <ThemedButton onPress={logout}>

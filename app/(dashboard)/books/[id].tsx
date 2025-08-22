@@ -2,7 +2,7 @@ import { StyleSheet, Text } from 'react-native';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import {
   ThemedView,
-  ThemedText,
+  ThemedTexted,
   ThemedLoader,
   ThemedCard,
   Spacer,
@@ -45,14 +45,14 @@ const BookDetails = () => {
   return (
     <ThemedView safe={true} style={styles.container}>
       <ThemedCard style={styles.card}>
-        <ThemedText style={styles.title}>{book.title}</ThemedText>
-        <ThemedText>Written by {book.author}</ThemedText>
+        <ThemedTexted style={styles.title}>{book.title}</ThemedTexted>
+        <ThemedTexted>Written by {book.author}</ThemedTexted>
         <Spacer />
 
-        <ThemedText title={true}>Book description:</ThemedText>
+        <ThemedTexted title={true}>Book description:</ThemedTexted>
         <Spacer height={10} />
 
-        <ThemedText>{book.description}</ThemedText>
+        <ThemedTexted>{book.description}</ThemedTexted>
       </ThemedCard>
 
       <ThemedButton onPress={handleDelete} style={styles.delete}>

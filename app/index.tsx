@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet } from 'react-native';
 import { Link } from 'expo-router';
-import { Spacer, ThemedLogo, ThemedText, ThemedView } from '../components';
+import { Spacer, ThemedLogo, ThemedTexted, ThemedView } from '../components';
 
 const Home = () => {
   return (
@@ -8,29 +8,29 @@ const Home = () => {
       <ThemedLogo />
       <Spacer />
 
-      <ThemedText style={styles.title} title={true}>
+      <ThemedTexted style={styles.title} title={true}>
         The Number 1
-      </ThemedText>
+      </ThemedTexted>
 
-      <ThemedText style={{ marginTop: 10, marginBottom: 30 }}>
+      <ThemedTexted style={{ marginTop: 10, marginBottom: 30 }}>
         Reading List App
-      </ThemedText>
+      </ThemedTexted>
 
       <Link href='/login' asChild>
         <Pressable style={styles.link}>
-          <ThemedText>Login Page</ThemedText>
+          <ThemedTexted>Login Page</ThemedTexted>
         </Pressable>
       </Link>
 
       <Link href='/register' asChild>
         <Pressable style={styles.link}>
-          <ThemedText>Register Page</ThemedText>
+          <ThemedTexted>Register Page</ThemedTexted>
         </Pressable>
       </Link>
 
       <Link href='/profile' asChild>
         <Pressable style={styles.link}>
-          <ThemedText>Profile page</ThemedText>
+          <ThemedTexted>Profile page</ThemedTexted>
         </Pressable>
       </Link>
     </ThemedView>

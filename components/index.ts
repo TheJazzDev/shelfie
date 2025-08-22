@@ -1,7 +1,7 @@
 import Spacer from './Spacer';
 import ThemedCard from './ThemedCard';
 import ThemedLogo from './ThemedLogo';
-import ThemedText from './ThemedText';
+import ThemedTexted from './ThemedTexted';
 import ThemedView from './ThemedView';
 import ThemedLoader from './ThemedLoader';
 import ThemedButton from './ThemedButton';
@@ -11,7 +11,7 @@ export {
   Spacer,
   ThemedCard,
   ThemedLogo,
-  ThemedText,
+  ThemedTexted,
   ThemedView,
   ThemedLoader,
   ThemedButton,

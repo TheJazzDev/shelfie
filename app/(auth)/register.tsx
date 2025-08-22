@@ -9,7 +9,7 @@ import { Link } from 'expo-router';
 import {
   Spacer,
   ThemedButton,
-  ThemedText,
+  ThemedTexted,
   ThemedTextInput,
   ThemedView,
 } from '../../components';
@@ -32,9 +32,9 @@ const Register = () => {
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ThemedView style={styles.container}>
         <Spacer />
-        <ThemedText title={true} style={styles.title}>
+        <ThemedTexted title={true} style={styles.title}>
           Register an Account
-        </ThemedText>
+        </ThemedTexted>
 
         <Spacer />
         <ThemedTextInput
@@ -69,7 +69,9 @@ const Register = () => {
         <Spacer height={100} />
 
         <Link href='/login' replace>
-          <ThemedText style={{ textAlign: 'center' }}>Login instead</ThemedText>
+          <ThemedTexted style={{ textAlign: 'center' }}>
+            Login instead
+          </ThemedTexted>
         </Link>
       </ThemedView>
     </TouchableWithoutFeedback>
